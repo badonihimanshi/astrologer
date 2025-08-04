@@ -7,22 +7,22 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Book from "./components/Book";
 
-// Add Google Fonts link for script font in index.html: <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
 function App() {
   const [showModal, setShowModal] = useState(false);
+  
   return (
-    <div className="font-sans text-gray-800 bg-gradient-to-b from-yellow-50 to-purple-100">
+    <div className="font-sans text-gray-800 bg-white antialiased">
       <Navbar />
-      {/* <main> */}
+      <main className="min-h-screen">
         <Home onBookClick={() => setShowModal(true)} />
-        <About />
+        <About onBookClick={() => setShowModal(true)} />
         <Service />
         <Contact />
-      {/* </main> */}
-      {/* <Footer />
-      {showModal && <Book onClose={() => setShowModal(false)} />} */}
+      </main>
+      <Footer />
+      {showModal && <Book onClose={() => setShowModal(false)} />}
     </div>
   );
 }
+
 export default App;
